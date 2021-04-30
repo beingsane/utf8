@@ -1,0 +1,16 @@
+ let aLiOlSectionHeader = document.createElement('a')
+        aLiOlSectionHeader.setAttribute('href', '#')
+        aLiOlSectionHeader.appendChild(iALiOlSectionHeader)
+        aLiOlSectionHeader.innerText = aLiOlSectionHeader.innerText +' Home'
+        initButtonAction(aLiOlSectionHeader, loadingUrl, 'home.jsp', "click")
+
+    function initButtonAction(element, callback, param, event) {
+        function local() {
+            return (param != null) ? callback(param) : callback();
+        }
+        if (element.addEventListener) {
+            element.addEventListener(event, local, false);
+        } else if (element.attachEvent) {
+            element.attachEvent("on" + event, local);
+        }
+    }
